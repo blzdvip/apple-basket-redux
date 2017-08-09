@@ -11,7 +11,7 @@ let actions = {
 
             //通知开始摘苹果
             dispatch(actions.beginPickApple());
-            fetch('https://hacker-news.firebaseio.com/v0/jobstories.json')
+            fetch('../data/apple.json')
                 .then(res => {
                     if (res.status != 200) dispatch(actions.failPickApple(res.statusText));
 

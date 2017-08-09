@@ -5,7 +5,7 @@ import AppleItem from '../components/AppleItem';
 import actions from '../actions/appleActions';
 import '../styles/appleBasket.scss';
 
-class AppleBasket extends React.Component {
+class AppleBusket extends React.Component {
 
     /**
      * 计算当前已吃和未吃苹果的状态
@@ -76,7 +76,7 @@ class AppleBasket extends React.Component {
                     </div>
 
                      <div className="section">
-                        <div className="title">已吃掉</div>
+                        <div className="head">已吃掉</div>
                         <div className="content">{EatenQuantity}个苹果，{EatenWeight}克</div>
                     </div>
                 </div>
@@ -86,24 +86,20 @@ class AppleBasket extends React.Component {
                 </div>
 
                 <div className="btn-div">
-                    <button className={isPicking ? 'disabled' : ''} onClick={actions.pickApple()}>摘苹果</button>
+                    <button className={isPicking ? 'disabled' : ''} onClick={actions.pickApple}>摘苹果</button>
                 </div>
             </div>
         );
     }
 }
 
-function mapStateToProps(state) {
-    return {
-        appleBasket: state.appleBasket
-    };
-}
+const mapStateToProps = state => ({
+    appleBasket: state.appleBasket
+});
 
-function mapDispatchToProps(dispatch) {
-    return {
-        actions: bindActionCreators(actions, dispatch)
-    };
-}
+const mapDispatchToProps = dispatch => ({
+    actions: bindActionCreators(actions, dispatch)
+});
 
 /**
  *  [mapStateToProps(state, [ownProps]): stateProps] (Function) 如果定义该参数，组件将会监听 Redux store 的变化。
@@ -112,4 +108,4 @@ function mapDispatchToProps(dispatch) {
  * [mapDispatchToProps(dispatch, [ownProps]): dispatchProps] (Object or Function)
  */
 //contect()连接 React 组件与 Redux store。
-export default connect(mapStateToProps, mapDispatchToProps)(AppleBasket);
+export default connect(mapStateToProps, mapDispatchToProps)(AppleBusket);

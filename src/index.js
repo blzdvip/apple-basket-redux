@@ -6,14 +6,14 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
 import reducer from './reducers'
-import AppleBasket from './containers/AppleBasket';
+import AppleBusket from './containers/AppleBasket';
 
 const store = createStore(reducer, applyMiddleware(thunk));
 
 // Render the main component into the dom
 ReactDOM.render(
     <Provider store={store}>
-        <AppleBasket />
+        <AppleBusket />
     </Provider>
     , document.getElementById('app')
 );

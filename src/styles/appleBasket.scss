@@ -6,6 +6,7 @@
     width: 500px;
     border: 1px solid #ddd;
     margin: 50px auto;
+    border-radius: 4px;
 }
 
 .apple-basket {
@@ -83,7 +84,7 @@
             background-color: #55d98d;
         }
 
-        button:disabled {
+        button.disabled {
             background-color: #95a5a6;
             cursor: default;
             opacity: 0.65;

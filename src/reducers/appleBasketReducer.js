@@ -28,6 +28,7 @@ export default (state = initialState, action) => {
             //将isPicking设置为true
             return fromJS(state).set('isPicking', true).toJS();
         case 'apple/DONE_PICK_APPLE':
+        
             let newApple = {
                 id: state.newAppleId,
                 weight: action.payload,
